@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44' fill='none' stroke='%2322C55E' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 38V28M16 38V20M26 38V26M6 22L18 12l8 6 12-10'/%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#050505;--side:#080808;--card:#0E0E0E;--line:#1E241F;--ink:#F3F5F3;--mut:#8D958F;--acc:#22C55E;--acc2:#4ADE80;--pos:#22E06B;--neg:#FF4D4D;--blue:#3B82F6;--amb:#F59E0B;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--bg:#050505;--side:#080808;--card:#101010;--line:#1E241F;--ink:#F3F5F3;--mut:#8D958F;--acc:#22C55E;--acc2:#4ADE80;--pos:#00D68F;--neg:#FF4545;--blue:#3B82F6;--amb:#F59E0B;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 :root[data-theme="light"]{--bg:#F2F5F3;--side:#fff;--card:#fff;--line:#DCE4DE;--ink:#0E1A12;--mut:#5C6B61;--acc:#12A150;--acc2:#12A150;--pos:#0F9D58;--neg:#D9363E;color-scheme:light}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}[hidden]{display:none!important}
@@ -62,7 +62,8 @@ h1{font-size:26px;margin:0;letter-spacing:-.02em}h2{font-size:15px;margin:0}.mut
 .empty{color:var(--mut);padding:6px 0}.tools{display:flex;gap:8px;flex-wrap:wrap}
 .bf{display:grid;grid-template-columns:2fr 1fr auto;gap:8px;margin-top:10px}
 #mb{position:fixed;inset:0;background:rgba(0,0,0,.62);display:grid;place-items:center;padding:16px;z-index:50}
-.md{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;width:100%;max-width:380px;display:grid;gap:12px}
+.md{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;width:100%;max-width:380px;display:grid;gap:12px;max-height:90vh;overflow:auto}
+.gr{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}.ak{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:9px}.ak .h{display:flex;justify-content:space-between;gap:10px;align-items:center}.ak .h b{font-size:18px}.ak .acts{display:flex;gap:8px;flex-wrap:wrap}.ak .acts button{background:none;border:1px solid var(--line);color:var(--mut);border-radius:10px;padding:6px 11px;cursor:pointer}.ak .acts button:hover{color:var(--ink)}.emp{color:var(--mut);padding:18px;text-align:center}
 .md label{display:grid;gap:4px;font-size:12px;margin-bottom:6px}.md p:empty{display:none}.mbt{display:flex;gap:8px;justify-content:flex-end}
 #ts{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--acc);color:#fff;padding:10px 16px;border-radius:12px;z-index:60;max-width:90vw}
 .st{background:linear-gradient(135deg,color-mix(in srgb,var(--t) 26%,var(--card)),var(--card) 78%)}
@@ -108,13 +109,15 @@ body.ld .card,body.ld .st{background:linear-gradient(90deg,var(--card) 25%,#1b21
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></symbol><symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h14"/><path d="M14 4l4 4-4 4"/><path d="M20 16H6"/><path d="M10 12l-4 4 4 4"/></symbol><symbol id="i-bars" viewBox="0 0 24 24"><path d="M5 20V11"/><path d="M12 20V4"/><path d="M19 20v-6"/></symbol><symbol id="i-pie" viewBox="0 0 24 24"><path d="M21 12A9 9 0 1 1 12 3v9z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol><symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9L7 7M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol><symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 8l4 4 5-7 5 7 4-4-2 11H5z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-eyeoff" viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M10.6 5.1A9.7 9.7 0 0 1 12 5c6 0 10 7 10 7a17 17 0 0 1-3.2 3.9M6.6 6.6A16.6 16.6 0 0 0 2 12s4 7 10 7a9.8 9.8 0 0 0 4.4-1"/></symbol><symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/></symbol><symbol id="i-arrdown" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M6 13l6 6 6-6"/></symbol><symbol id="i-arrup" viewBox="0 0 24 24"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></symbol><symbol id="i-wallet" viewBox="0 0 24 24"><path d="M3 7h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 7l2-3h12"/><circle cx="16.5" cy="13.5" r="1.2"/></symbol><symbol id="i-chevr" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol><symbol id="i-chevl" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol><symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v6a4 4 0 0 1-8 0z"/><path d="M8 6H4v2a3 3 0 0 0 4 3M16 6h4v2a3 3 0 0 1-4 3"/><path d="M12 14v4M8 20h8"/></symbol><symbol id="i-tup" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol><symbol id="i-tdown" viewBox="0 0 24 24"><path d="M3 7l6 6 4-4 8 8"/><path d="M15 17h6v-6"/></symbol><symbol id="i-fork" viewBox="0 0 24 24"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10"/><path d="M17 3c-2 2-3 5-3 8h3v10"/></symbol><symbol id="i-bus" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="13" rx="2"/><path d="M4 11h16M8 21v-4M16 21v-4"/><circle cx="8" cy="14" r=".6"/><circle cx="16" cy="14" r=".6"/></symbol><symbol id="i-gamepad" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="10" rx="4"/><path d="M8 11v4M6 13h4"/><circle cx="15.5" cy="12" r=".7"/><circle cx="17.5" cy="14" r=".7"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8v8M8 12h8"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4h10a4 4 0 0 1 4 4v12H9a4 4 0 0 1-4-4z"/><path d="M5 16a4 4 0 0 1 4-4h10"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L5 14h6l-1 8 8-12h-6z"/></symbol><symbol id="i-dots" viewBox="0 0 24 24"><circle cx="6" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="18" cy="12" r="1.4"/></symbol><symbol id="i-coins" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.5-1-1.4-1.5-2.5-1.5-1.5 0-2.5.8-2.5 2s1 1.7 2.5 2 2.5.8 2.5 2-1 2-2.5 2c-1.2 0-2.1-.5-2.6-1.5M12 6v2M12 16v2"/></symbol><symbol id="i-cash" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="2"/><circle cx="12" cy="12" r="2.5"/></symbol><symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></symbol><symbol id="i-out" viewBox="0 0 24 24"><path d="M9 4H5v16h4"/><path d="M16 8l4 4-4 4M20 12H9"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></symbol><symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h14"/><path d="M14 4l4 4-4 4"/><path d="M20 16H6"/><path d="M10 12l-4 4 4 4"/></symbol><symbol id="i-bars" viewBox="0 0 24 24"><path d="M5 20V11"/><path d="M12 20V4"/><path d="M19 20v-6"/></symbol><symbol id="i-pie" viewBox="0 0 24 24"><path d="M21 12A9 9 0 1 1 12 3v9z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol><symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9L7 7M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol><symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 8l4 4 5-7 5 7 4-4-2 11H5z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-eyeoff" viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M10.6 5.1A9.7 9.7 0 0 1 12 5c6 0 10 7 10 7a17 17 0 0 1-3.2 3.9M6.6 6.6A16.6 16.6 0 0 0 2 12s4 7 10 7a9.8 9.8 0 0 0 4.4-1"/></symbol><symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/></symbol><symbol id="i-arrdown" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M6 13l6 6 6-6"/></symbol><symbol id="i-arrup" viewBox="0 0 24 24"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></symbol><symbol id="i-wallet" viewBox="0 0 24 24"><path d="M3 7h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 7l2-3h12"/><circle cx="16.5" cy="13.5" r="1.2"/></symbol><symbol id="i-chevr" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol><symbol id="i-chevl" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol><symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v6a4 4 0 0 1-8 0z"/><path d="M8 6H4v2a3 3 0 0 0 4 3M16 6h4v2a3 3 0 0 1-4 3"/><path d="M12 14v4M8 20h8"/></symbol><symbol id="i-tup" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol><symbol id="i-tdown" viewBox="0 0 24 24"><path d="M3 7l6 6 4-4 8 8"/><path d="M15 17h6v-6"/></symbol><symbol id="i-fork" viewBox="0 0 24 24"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10"/><path d="M17 3c-2 2-3 5-3 8h3v10"/></symbol><symbol id="i-bus" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="13" rx="2"/><path d="M4 11h16M8 21v-4M16 21v-4"/><circle cx="8" cy="14" r=".6"/><circle cx="16" cy="14" r=".6"/></symbol><symbol id="i-gamepad" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="10" rx="4"/><path d="M8 11v4M6 13h4"/><circle cx="15.5" cy="12" r=".7"/><circle cx="17.5" cy="14" r=".7"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8v8M8 12h8"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4h10a4 4 0 0 1 4 4v12H9a4 4 0 0 1-4-4z"/><path d="M5 16a4 4 0 0 1 4-4h10"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L5 14h6l-1 8 8-12h-6z"/></symbol><symbol id="i-dots" viewBox="0 0 24 24"><circle cx="6" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="18" cy="12" r="1.4"/></symbol><symbol id="i-coins" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.5-1-1.4-1.5-2.5-1.5-1.5 0-2.5.8-2.5 2s1 1.7 2.5 2 2.5.8 2.5 2-1 2-2.5 2c-1.2 0-2.1-.5-2.6-1.5M12 6v2M12 16v2"/></symbol><symbol id="i-cash" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="2"/><circle cx="12" cy="12" r="2.5"/></symbol><symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></symbol><symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 10l9-6 9 6"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></symbol><symbol id="i-card" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6 15h4"/></symbol><symbol id="i-out" viewBox="0 0 24 24"><path d="M9 4H5v16h4"/><path d="M16 8l4 4-4 4M20 12H9"/></symbol></svg>
 <div class="app">
 <aside class="side">
   <div class="logo"><svg viewBox="0 0 44 44" fill="none" stroke="#22C55E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 38V28M16 38V20M26 38V26M6 22L18 12l8 6 12-10"/></svg><b>Meu</b><b class="ac">Financeiro</b></div>
   <nav id="nav" aria-label="Seções">
     <button data-a="go" data-i="inicio"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg> Dashboard</button>
     <button data-a="go" data-i="transacoes"><svg class="ico" aria-hidden="true"><use href="#i-swap"/></svg> Transações</button>
+    <button data-a="go" data-i="contas"><svg class="ico" aria-hidden="true"><use href="#i-bank"/></svg> Contas</button>
+    <button data-a="go" data-i="cartoes"><svg class="ico" aria-hidden="true"><use href="#i-card"/></svg> Cartões</button>
     <button data-a="go" data-i="relatorios"><svg class="ico" aria-hidden="true"><use href="#i-bars"/></svg> Relatórios</button>
     <button data-a="go" data-i="categorias"><svg class="ico" aria-hidden="true"><use href="#i-pie"/></svg> Categorias</button>
     <button data-a="go" data-i="metas"><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg> Metas</button>
@@ -139,6 +142,7 @@ body.ld .card,body.ld .st{background:linear-gradient(90deg,var(--card) 25%,#1b21
     <div class="st" style="--t:var(--acc)"><i class="ic"><svg class="ico" aria-hidden="true"><use href="#i-wallet"/></svg></i><span class="mut">Saldo do mês</span><div><strong id="sd"></strong><small class="mut" id="pj"></small></div><div class="sp" id="sp3"></div></div>
     <div class="st" style="--t:var(--acc2);cursor:pointer" data-a="gm" role="button"><i class="ic"><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg></i><span class="mut">Meta do mês</span><div><strong id="gv"></strong></div><div class="sp"><div class="bar"><i id="gb" class="g"></i></div><small class="mut" id="gp"></small></div></div>
   </div>
+  <div class="stats"><div class="st" style="--t:var(--blue);cursor:pointer" data-a="go" data-i="contas" role="button"><i class="ic"><svg class="ico" aria-hidden="true"><use href="#i-bank"/></svg></i><span class="mut">Saldo total</span><div><strong id="k1"></strong></div></div><div class="st" style="--t:#8B5CF6;cursor:pointer" data-a="go" data-i="cartoes" role="button"><i class="ic"><svg class="ico" aria-hidden="true"><use href="#i-card"/></svg></i><span class="mut">Faturas em aberto</span><div><strong id="k2"></strong></div></div><div class="st" style="--t:var(--pos);cursor:pointer" data-a="go" data-i="contas" role="button"><i class="ic"><svg class="ico" aria-hidden="true"><use href="#i-wallet"/></svg></i><span class="mut">Disponível após faturas</span><div><strong id="k3"></strong></div></div><div class="st" style="--t:var(--amb);cursor:pointer" data-a="go" data-i="contas" role="button"><i class="ic"><svg class="ico" aria-hidden="true"><use href="#i-pie"/></svg></i><span class="mut">Orçamento das contas</span><div><strong id="k4"></strong><small class="mut" id="k4s"></small></div></div></div>
   <div class="g2">
     <div class="card"><div class="ch"><h2>Evolução financeira</h2><div class="rg" id="rg"></div></div>
       <div class="lgd"><span><i class="dot" style="background:var(--pos)"></i>Receitas</span><span><i class="dot" style="background:var(--neg)"></i>Despesas</span></div><div id="chart"></div></div>
@@ -172,6 +176,12 @@ body.ld .card,body.ld .st{background:linear-gradient(90deg,var(--card) 25%,#1b21
     <div id="list"></div></div>
 </section>
 
+<section class="v" id="v-contas" hidden>
+  <div class="card"><div class="ch"><h2>Contas bancárias</h2><button class="lk" data-a="acn">+ Nova conta</button></div><div class="gr" id="accs"></div></div>
+</section>
+<section class="v" id="v-cartoes" hidden>
+  <div class="card"><div class="ch"><h2>Cartões</h2><button class="lk" data-a="cdn">+ Novo cartão</button></div><div class="gr" id="cards"></div></div>
+</section>
 <section class="v" id="v-relatorios" hidden>
   <div class="rp">
     <div class="card"><div class="ch"><h2>Evolução financeira</h2><div class="rg" id="rg2"></div></div><div class="lgd"><span><i class="dot" style="background:var(--pos)"></i>Receitas</span><span><i class="dot" style="background:var(--neg)"></i>Despesas</span></div><div id="chart2"></div></div>
@@ -228,7 +238,7 @@ function pct(a,b){if(!b)return null;return Math.round((a-b)/b*100)}
 function guess(t){t=t.toLowerCase();for(const k in KW)if(t.includes(k))return KW[k];return "Outros"}
 function saveFile(n,t){return(async()=>{try{if(typeof claude=="undefined"){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([t]));a.download=n;a.click();return}const d=await claude.use("downloads");if(!d)throw 0;await d.save({filename:n,data:t})}catch(e){if(e&&e.code=="declined")return;toast("Não foi possível salvar o arquivo.")}})()}
 const niceMax=m=>{if(m<=0)return 1000;const p=Math.pow(10,Math.floor(Math.log10(m)));return Math.ceil(m/p)*p};
-const rowH=(x,f)=>`<div class="tx"><i class="ci ${x.v<0?"n":"p"}">${IC[x.c]||ico("dots")}</i><div class="tn"><b>${esc(x.t)}</b><small>${x.c}${f?" · "+(x.a||"Carteira"):""}${x.p===false?" · pendente":""}</small></div><span class="dt">${x.d.split("-").reverse().join("/")}</span><span class="amt ${x.v<0?"neg":"pos"}">${x.v<0?"- ":"+ "}${brl(Math.abs(x.v))}</span>${f?`<label class="pg"><input type="checkbox" data-p="${x.id}" ${x.p!==false?"checked":""} aria-label="Pago"></label><button class="ib" data-a="ed" data-i="${x.id}" aria-label="Editar">${ico("edit")}</button><button class="ib" data-a="del" data-i="${x.id}" aria-label="Excluir">${ico("x")}</button>`:""}</div>`;
+const rowH=(x,f)=>`<div class="tx"><i class="ci ${x.v<0?"n":"p"}">${IC[x.c]||ico("dots")}</i><div class="tn"><b>${esc(x.t)}</b><small>${x.c}${f?" · "+srcName(x):""}${x.p===false?" · pendente":""}</small></div><span class="dt">${x.d.split("-").reverse().join("/")}</span><span class="amt ${x.v<0?"neg":"pos"}">${x.v<0?"- ":"+ "}${brl(Math.abs(x.v))}</span>${f?`<label class="pg"><input type="checkbox" data-p="${x.id}" ${x.p!==false?"checked":""} aria-label="Pago"></label><button class="ib" data-a="ed" data-i="${x.id}" aria-label="Editar">${ico("edit")}</button><button class="ib" data-a="del" data-i="${x.id}" aria-label="Excluir">${ico("x")}</button>`:""}</div>`;
 const boxH=(b,f)=>{const p=b.g?Math.min(100,b.s/b.g*100):0;return `<div class="bx${b.g&&b.s>=b.g?" done":""}"><div class="bi">${b.img&&/^data:image\//.test(b.img)?`<img src="${b.img}" alt="">`:`<div class="ph">${ico("target")}</div>`}<div><div class="h"><span>${esc(b.n)}${b.g&&b.s>=b.g?" "+ico("trophy"):""}</span><span>${Math.round(p)}%</span></div><div class="bar"><i class="g" style="width:${p}%"></i></div><div class="mut" style="margin-top:6px">${brl(b.s)}${b.g?" / "+brl(b.g):""}${b.d?` · prazo ${b.d.split("-").reverse().join("/")}`:""}</div></div></div>${f?`<button class="lim" data-a="in" data-i="${b.id}">guardar</button><button class="lim" data-a="out" data-i="${b.id}">retirar</button><button class="lim" data-a="bdel" data-i="${b.id}">excluir</button><button class="lim" data-a="img" data-i="${b.id}">trocar imagem</button>`:""}</div>`};
 function chartH(){
   const dm=new Date(cur.getFullYear(),cur.getMonth()+1,0).getDate(),now=mk(new Date())==mk(cur),last=now?new Date().getDate():dm;let E=[],D=[],lb=[];
@@ -240,9 +250,42 @@ function chartH(){
   const dots=(a,c)=>n<=12?a.map((v,i)=>`<circle cx="${x(i)}" cy="${y(v)}" r="3.5" fill="${c}"/>`).join(""):"";
   let g="";for(let k=0;k<4;k++){const v=mx*k/3;g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${L-8}" y="${y(v)+3}" text-anchor="end" font-size="10" fill="var(--mut)">${brl0(v)}</text>`}
   const st=Math.ceil(n/5);const xl=lb.map((t,i)=>i%st==0?`<text x="${x(i)}" y="${H-6}" text-anchor="middle" font-size="10" fill="var(--mut)">${t}</text>`:"").join("");
-  return `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Evolução de receitas e despesas">${g}${ar(E,"#22E06B")}${ar(D,"#FF4D4D")}${dots(E,"#22E06B")}${dots(D,"#FF4D4D")}${xl}</svg>`;
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Evolução de receitas e despesas">${g}${ar(E,"#00D68F")}${ar(D,"#FF4545")}${dots(E,"#00D68F")}${dots(D,"#FF4545")}${xl}</svg>`;
 }
-function render(){
+const ACOL=["#3B82F6","#8B5CF6","#22C55E","#F59E0B","#EC4899"],mid=()=>"i"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+function mig(){S.cd=S.cd||[];
+ if(!S.ac||!S.ac.length){const T=["dinheiro","corrente","digital","poupança"];S.ac=[];
+  ACC.forEach((n,i)=>{if(n=="Cartão de crédito"){if(S.tx.some(x=>x.a==n))S.cd.push({id:"k0",n,b:n,f:"Visa",t:"crédito",lim:0,fc:1,vc:10,bd:2,ac:"",c:ACOL[1]});return}S.ac.push({id:"a"+i,n,b:n,t:T[i]||"corrente",ini:0,lim:0,min:0,c:ACOL[S.ac.length%5]})});
+  S.tx.forEach(x=>{const n=x.a||"Carteira";if(n=="Cartão de crédito"&&S.cd.length){x.k="k0";delete x.a}else x.a=(S.ac.find(y=>y.n==n)||S.ac[0]).id})}
+ S.tx.forEach(x=>{if(!x.a&&!x.k)x.a=S.ac[0].id})}
+mig();
+const cardOf=id=>S.cd.find(c=>c.id==id),accOf=x=>x.a||((cardOf(x.k)||{}).t=="débito"?cardOf(x.k).ac:null),srcName=x=>(S.ac.find(a=>a.id==x.a)||cardOf(x.k)||{n:"Carteira"}).n;
+const aSt=a=>{const k=mk(cur);let bal=a.ini||0,e=0,s=0;S.tx.forEach(x=>{if(accOf(x)!==a.id||x.p===false)return;bal+=x.v;if(x.d.startsWith(k)){if(x.v>0)e+=x.v;else s-=x.v}});return{bal,e,s,u:a.lim?s/a.lim*100:0}};
+const cSt=c=>{const k=mk(cur);let u=0,m=0;S.tx.forEach(x=>{if(x.k!==c.id)return;if(x.v<0&&x.d.startsWith(k))m-=x.v;if(c.t=="crédito"&&!x.fp)u-=x.v});u=Math.max(0,u);return{u,m,av:Math.max(0,(c.lim||0)-u),pc:c.lim?u/c.lim*100:0}};
+const pbar=(p,col)=>`<div class="bar"><i class="${p>=100?"over":""}" style="width:${Math.min(100,p)}%;${p>=100?"":"background:"+col}"></i></div>`;
+const acts=(a,e,x,h)=>`<div class="acts"><button data-a="${e}" data-i="${a}">Editar</button><button data-a="${h}" data-i="${a}">Movimentações</button><button data-a="${x}" data-i="${a}">Excluir</button></div>`;
+const accH=a=>{const t=aSt(a);return `<div class="ak" style="border-left:3px solid ${a.c}"><div class="h"><span>${ico("bank")} ${esc(a.n)} <small class="mut">${esc(a.b)} · ${a.t}</small></span><b>${brl(t.bal)}</b></div>${a.lim?pbar(t.u,a.c)+`<div class="mut">Gastos do mês ${brl(t.s)} de ${brl(a.lim)} · disponível no orçamento ${brl(Math.max(0,a.lim-t.s))} · ${Math.round(t.u)}%</div>`:`<div class="mut">Sem limite de gastos definido</div>`}<div class="mut">Entradas ${brl(t.e)} · Saídas ${brl(t.s)}${a.min?" · mínimo "+brl(a.min):""}${a.min&&t.bal<a.min?" (abaixo)":""}</div>${acts(a.id,"ace","acx","srh")}</div>`};
+const cardH=c=>{const t=cSt(c),cr=c.t=="crédito";return `<div class="ak" style="border-left:3px solid ${c.c}"><div class="h"><span>${ico("card")} ${esc(c.n)} <small class="mut">${esc(c.b)} · ${esc(c.f)} · ${c.t}</small></span><b>${cr?brl(t.av)+" livre":brl(t.m)+" no mês"}</b></div>${cr&&c.lim?pbar(t.pc,c.c)+`<div class="mut">Usado ${brl(t.u)} de ${brl(c.lim)} · ${t.pc.toFixed(1).replace(".",",")}%</div>`:""}<div class="mut">${cr?"Fecha dia "+c.fc+" · vence dia "+c.vc+" · melhor dia de compra "+c.bd:"Débito na conta "+esc((S.ac.find(a=>a.id==c.ac)||{n:"-"}).n)}</div>${acts(c.id,"cde","cdx","srh")}</div>`};
+function fillSrc(){const o=[...S.ac.map(a=>[a.id,a.n]),...S.cd.map(c=>[c.id,c.n+" ("+c.t+")"])],h=o.map(([v,n])=>`<option value="${v}">${esc(n)}</option>`).join(""),v1=$("acc").value,v2=$("fa").value;$("acc").innerHTML=h;$("fa").innerHTML='<option value="all">Todas as contas e cartões</option>'+h;if(o.some(x=>x[0]==v1))$("acc").value=v1;$("fa").value=v2=="all"||o.some(x=>x[0]==v2)?v2:"all"}
+async function editAcc(id){const a=id?S.ac.find(x=>x.id==id):null,N={type:"number",step:"0.01"};
+ const r=await ask(a?"Editar conta":"Nova conta",[{label:"Nome da conta",value:a?a.n:""},{label:"Banco",value:a?a.b:""},{label:"Tipo",opts:["corrente","poupança","digital","dinheiro"],value:a?a.t:"corrente"},{label:"Saldo inicial (R$)",...N,value:a?a.ini:0},{label:"Limite mensal de gastos (R$, 0 = sem limite)",...N,value:a?a.lim:0},{label:"Saldo mínimo desejado (R$)",...N,value:a?a.min:0}],"Salvar");
+ if(!r)return;const n=r[0].trim(),ini=parseFloat(r[3])||0,lim=parseFloat(r[4])||0,min=parseFloat(r[5])||0;
+ if(!n||lim<0||min<0){toast("Informe o nome e valores não negativos.");return}
+ if(a)Object.assign(a,{n,b:r[1].trim()||n,t:r[2],ini,lim,min});else S.ac.push({id:mid(),n,b:r[1].trim()||n,t:r[2],ini,lim,min,c:ACOL[S.ac.length%5]});
+ save();render();toast("Conta salva.")}
+async function editCard(id){const c=id?cardOf(id):null,r=await ask(c?"Editar cartão":"Novo cartão",[{label:"Nome do cartão",value:c?c.n:""},{label:"Banco emissor",value:c?c.b:""},{label:"Bandeira",opts:["Visa","Mastercard","Elo","Amex","Outra"],value:c?c.f:"Visa"},{label:"Tipo",opts:["crédito","débito"],value:c?c.t:"crédito"},{label:"Limite total (R$, crédito)",type:"number",step:"0.01",value:c?c.lim:0},{label:"Dia de fechamento (1 a 31)",type:"number",value:c?c.fc:1},{label:"Dia de vencimento (1 a 31)",type:"number",value:c?c.vc:10},{label:"Conta vinculada (débito)",opts:S.ac.map(a=>a.n),value:(S.ac.find(a=>a.id==(c&&c.ac))||S.ac[0]).n}],"Salvar");
+ if(!r)return;const n=r[0].trim(),lim=parseFloat(r[4])||0,fc=parseInt(r[5]),vc=parseInt(r[6]),ok=d=>d>=1&&d<=31;
+ if(!n||lim<0||(r[3]=="crédito"&&!(ok(fc)&&ok(vc)))){toast("Informe o nome e dias entre 1 e 31.");return}
+ const o={n,b:r[1].trim()||n,f:r[2],t:r[3],lim:r[3]=="crédito"?lim:0,fc:fc||1,vc:vc||1,bd:fc>=28?1:(fc||0)+1,ac:(S.ac.find(a=>a.n==r[7])||{}).id||""};
+ if(c)Object.assign(c,o);else S.cd.push({id:mid(),c:ACOL[(S.cd.length+1)%5],...o});save();render();toast("Cartão salvo.")}
+function delSrc(id,l){const u=S.tx.filter(x=>x.a==id||x.k==id).length+S.cd.filter(c=>c.ac==id).length;
+ if(u){toast("Há "+u+" item(ns) vinculados. Edite ou exclua antes.");return}
+ if(l=="ac"&&S.ac.length<2){toast("Mantenha ao menos uma conta.");return}
+ ask("Excluir",[],"Excluir","Excluir este item?").then(r=>{if(r){S[l]=S[l].filter(x=>x.id!=id);save();render()}})}
+function render(){fillSrc();
+ const tA=S.ac.reduce((s,a)=>s+aSt(a).bal,0),fat=S.cd.reduce((s,c)=>s+(c.t=="crédito"?cSt(c).u:0),0),lA=S.ac.filter(a=>a.lim),us=lA.reduce((s,a)=>s+aSt(a).s,0),lt=lA.reduce((s,a)=>s+a.lim,0);
+ cnt("k1",tA);cnt("k2",fat);cnt("k3",tA-fat);$("k4").textContent=lt?Math.round(us/lt*100)+"%":"—";$("k4s").textContent=lt?" de "+brl(lt):" sem limites";
+ $("accs").innerHTML=S.ac.map(accH).join("");$("cards").innerHTML=S.cd.length?S.cd.map(cardH).join(""):'<div class="emp">Nenhum cartão cadastrado.</div>';
   const k=mk(cur),[pf,pt,qf,qt]=prange(),all=S.tx.filter(x=>x.d>=pf&&x.d<=pt),cs=sumR(pf,pt),pv=sumR(qf,qt),ent=cs.e,sai=cs.s,sd=ent-sai;
   $("ml").textContent=cur.toLocaleDateString("pt-BR",{month:"long",year:"numeric"});
   cnt("e",ent);cnt("s",sai);cnt("sd",sd);
@@ -251,7 +294,7 @@ function render(){
   const dm=new Date(cur.getFullYear(),cur.getMonth()+1,0).getDate(),now=mk(new Date())==k,nd=now?new Date().getDate():dm;
   $("pj").textContent=sai&&per=="mes"?"Previsão de saídas: "+brl(now?sai/nd*dm:sai):"";
   const h=[5,4,3,2,1,0].map(i=>sums(back(i)));
-  $("sp1").innerHTML=spark(h.map(x=>x.e),"#22E06B");$("sp2").innerHTML=spark(h.map(x=>x.s),"#FF4D4D");$("sp3").innerHTML=spark(h.map(x=>Math.max(0,x.e-x.s)),"#22E06B");
+  $("sp1").innerHTML=spark(h.map(x=>x.e),"#00D68F");$("sp2").innerHTML=spark(h.map(x=>x.s),"#FF4545");$("sp3").innerHTML=spark(h.map(x=>Math.max(0,x.e-x.s)),"#00D68F");
   $("rg").innerHTML=["1M","3M","6M","1A"].map(r=>`<button data-a="rng" data-i="${r}" class="${r==rng?"on":""}">${r}</button>`).join("");
   $("chart").innerHTML=chartH();$("chart2").innerHTML=$("chart").innerHTML;$("rg2").innerHTML=$("rg").innerHTML;
   const by={};all.filter(x=>x.v<0).forEach(x=>by[x.c]=(by[x.c]||0)-x.v);
@@ -272,6 +315,8 @@ function render(){
   $("top5").innerHTML=all.filter(x=>x.v<0).sort((a,b)=>a.v-b.v).slice(0,5).map(x=>rowH(x,false)).join("")||'<div class="empty">Sem despesas no período.</div>';
   const al=[];CATS.forEach(c=>{const l=S.lim[c],g=by[c]||0;if(l&&per=="mes"&&g>=l*.8)al.push(g>=l?`${c}: limite ultrapassado (${brl(g)} de ${brl(l)})`:`${c}: ${Math.round(g/l*100)}% do limite usado`)});
   const pend=all.filter(x=>x.v<0&&x.p===false);if(pend.length)al.push(`${pend.length} conta(s) a pagar: ${brl(-pend.reduce((a,x)=>a+x.v,0))}`);
+  S.ac.forEach(a=>{const t=aSt(a);if(a.lim&&t.u>=70)al.push(a.n+(t.u>=100?": limite de gastos atingido":": "+Math.round(t.u)+"% do limite de gastos"));if(a.min&&t.bal<a.min)al.push(a.n+": saldo abaixo do mínimo ("+brl(a.min)+")")});
+  S.cd.forEach(c=>{if(c.t!="crédito"||!c.lim)return;const p=cSt(c).pc;if(p>=70)al.push(c.n+(p>=100?": limite do cartão esgotado":": "+Math.round(p)+"% do limite do cartão"))});
   window.ALERTS=al;$("dot").hidden=!al.length;
   const sorted=[...all].sort((a,b)=>b.d.localeCompare(a.d));
   $("last").innerHTML=sorted.length?sorted.slice(0,5).map(x=>rowH(x,false)).join(""):'<div class="empty">Nenhum lançamento neste mês. Adicione o primeiro em Transações.</div>';
@@ -279,7 +324,7 @@ function render(){
   const top=cl.sort((a,b)=>by[b]-by[a])[0],over=CATS.filter(c=>S.lim[c]&&(by[c]||0)>S.lim[c]),hasL=Object.keys(S.lim).length;
   $("ins").innerHTML=`<div><i>${ico(ps===null?"bars":ps>0?"tup":"tdown")}</i>${ps===null?"Sem dados do mês anterior para comparar.":`Você gastou <b>${Math.abs(ps)}%</b> ${ps>=0?"a mais":"a menos"} em relação ao mês passado.`}</div><div><i>${top?IC[top]:ico("fork")}</i>${top?`${top} representa <b>${Math.round(by[top]/sai*100)}%</b> das suas despesas.`:"Registre despesas para ver insights."}</div><div><i>${ico(over.length?"warn":"check")}</i>${!hasL?"Defina limites em Relatórios para acompanhar.":over.length?"Você passou do limite em "+over.join(", ")+".":"Você está dentro do seu limite mensal!"}</div>`;
   const q=$("q").value.toLowerCase(),ft=$("ft").value,fa=$("fa").value;
-  const ls=sorted.filter(x=>x.t.toLowerCase().includes(q)&&(ft=="all"||(ft=="in"&&x.v>0)||(ft=="out"&&x.v<0)||(ft=="pend"&&x.p===false))&&(fa=="all"||(x.a||"Carteira")==fa));
+  const ls=sorted.filter(x=>x.t.toLowerCase().includes(q)&&(ft=="all"||(ft=="in"&&x.v>0)||(ft=="out"&&x.v<0)||(ft=="pend"&&x.p===false))&&(fa=="all"||x.a==fa||x.k==fa||accOf(x)==fa));
   $("list").innerHTML=ls.length?ls.map(x=>rowH(x,true)).join(""):'<div class="empty">Nenhum lançamento encontrado.</div>';
   const cc=CATS.filter(c=>by[c]||S.lim[c]);
   $("cats").innerHTML=cc.length?cc.map(c=>{const g=by[c]||0,l=S.lim[c]||0,p=l?Math.min(100,g/l*100):(sai?g/sai*100:0);return `<div class="bx"><div class="h"><span>${IC[c]||""} ${c}</span><span>${brl(g)}${sai?" · "+Math.round(g/sai*100)+"%":""}${l?" · limite "+brl(l):""}</span></div><div class="bar"><i class="${l&&g>l?"over":""}" style="width:${p}%;${l&&g>l?"":"background:"+COL[CATS.indexOf(c)]}"></i></div><button class="lim" data-a="lim" data-i="${c}">${l?"alterar limite":"definir limite"}</button></div>`}).join(""):'<div class="empty">Nenhuma despesa neste mês. Defina limites tocando nas categorias depois do primeiro gasto.</div>';
@@ -287,7 +332,7 @@ function render(){
   $("hist").innerHTML=m6.map(m=>`<div title="${brl(m.v)}"><i style="height:${Math.max(3,m.v/mx*80)}px"></i>${m.l}</div>`).join("");
   $("boxes").innerHTML=S.box.length?S.box.map(b=>boxH(b,true)).join(""):'<div class="empty">Crie uma caixinha para uma meta, como viagem ou reserva de emergência.</div>';
 }
-function route(){const n=(location.hash||"#inicio").slice(1),ok=["inicio","transacoes","categorias","relatorios","metas","config"].includes(n)?n:"inicio";
+function route(){const n=(location.hash||"#inicio").slice(1),ok=["inicio","transacoes","contas","cartoes","categorias","relatorios","metas","config"].includes(n)?n:"inicio";
   document.querySelectorAll(".v").forEach(s=>s.hidden=s.id!="v-"+ok);document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("on",b.dataset.i==ok))}
 window.addEventListener("hashchange",()=>{route();sk(300)});
 function editTx(id){const t=S.tx.find(x=>String(x.id)===id);if(!t)return;
@@ -302,6 +347,9 @@ document.addEventListener("click",e=>{
   else if(a=="ed")editTx(i);
   else if(a=="per"){per=i;render()}
   else if(a=="lock")lockUI();
+  else if(a=="acn")editAcc();else if(a=="ace")editAcc(i);else if(a=="acx")delSrc(i,"ac");
+  else if(a=="cdn")editCard();else if(a=="cde")editCard(i);else if(a=="cdx")delSrc(i,"cd");
+  else if(a=="srh"){$("fa").value=i;location.hash="transacoes";render()}
   else if(a=="hide"){S.hv=!S.hv;save();render()}
   else if(a=="bell"){ask("Notificações",[],"Ok",(window.ALERTS||[]).join("\n")||"Nenhum alerta no momento.")}
   else if(a=="gm"){ask("Meta de economia do mês",[{label:"Quanto você quer economizar por mês (R$)",type:"number",step:"0.01",value:S.gm||""}],"Salvar").then(r=>{if(!r)return;const n=parseFloat(r[0]);S.gm=n>0?n:0;save();render()})}
@@ -315,8 +363,8 @@ document.addEventListener("change",e=>{const c=e.target.closest("[data-p]");if(!
 function fillCats(){$("cat").innerHTML=(kind=="D"?CATS:INC).map(c=>`<option>${c}</option>`).join("")}
 function setKind(k){kind=k;$("tD").classList.toggle("on",k=="D");$("tR").classList.toggle("on",k=="R");fillCats()}
 $("tD").onclick=()=>setKind("D");$("tR").onclick=()=>setKind("R");
-$("acc").innerHTML=ACC.map(a=>`<option>${a}</option>`).join("");
-$("fa").innerHTML='<option value="all">Todas as contas</option>'+ACC.map(a=>`<option>${a}</option>`).join("");
+
+
 $("dt").value=new Date().toISOString().slice(0,10);
 $("prev").onclick=()=>{cur.setMonth(cur.getMonth()-1);render()};$("next").onclick=()=>{cur.setMonth(cur.getMonth()+1);render()};
 $("q").oninput=render;$("ft").onchange=render;$("fa").onchange=render;
@@ -325,7 +373,7 @@ $("add").onclick=()=>{
   if(!v||v<=0||!d||!$("dt").value){toast("Preencha descrição, valor e data.");return}
   const [y,m,dd]=$("dt").value.split("-").map(Number),rn=$("rep").checked?12:1;
   for(let i=0;i<rn;i++){const dim=new Date(y,m+i,0).getDate(),dte=new Date(y,m-1+i,Math.min(dd,dim));
-    S.tx.push({id:Date.now()+Math.random(),d:mk(dte)+"-"+String(dte.getDate()).padStart(2,"0"),t:d,v:kind=="D"?-v:v,c:$("cat").value,a:$("acc").value,p:$("paid").checked})}
+    S.tx.push({id:Date.now()+Math.random(),d:mk(dte)+"-"+String(dte.getDate()).padStart(2,"0"),t:d,v:kind=="D"?-v:v,c:$("cat").value,...(S.cd.some(c=>c.id==$("acc").value)?{k:$("acc").value}:{a:$("acc").value}),p:$("paid").checked})}
   save();$("desc").value="";$("val").value="";$("rep").checked=false;$("paid").checked=true;cur=new Date(y,m-1,1);render();
 };
 $("bAdd").onclick=async()=>{const n=$("bn").value.trim(),g=parseFloat($("bg").value)||0;if(!n){toast("Dê um nome à meta.");return}const f=$("bi").files[0],img=f?await readImg(f):null;S.box.push({id:Date.now(),n,g,s:0,img,d:$("bd").value});save();$("bn").value="";$("bg").value="";$("bi").value="";$("bd").value="";render()};
@@ -335,17 +383,17 @@ $("file").onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileRe
   r.result.split(/\r?\n/).forEach(l=>{const p=l.split(/[;,](?=(?:[^"]*"[^"]*")*[^"]*$)/).map(x=>x.replace(/^"|"$/g,"").trim());if(p.length<3)return;
     let d=p[0],m=d.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);if(m)d=`${m[3]}-${m[2]}-${m[1]}`;if(!/^\d{4}-\d{2}-\d{2}$/.test(d))return;
     let s=p[p.length-1].replace(/[R$\s]/g,"");if(s.includes(","))s=s.replace(/\./g,"").replace(",",".");const v=parseFloat(s);if(isNaN(v)||v==0)return;
-    const t=p.slice(1,-1).join(" ");S.tx.push({id:Date.now()+Math.random(),d,t,v,c:v<0?guess(t):"Extra"});n++});
+    const t=p.slice(1,-1).join(" ");S.tx.push({id:Date.now()+Math.random(),d,t,v,c:v<0?guess(t):"Extra",a:S.ac[0].id});n++});
   save();render();toast(n+" lançamentos importados.");e.target.value=""};r.readAsText(f)};
 $("exp").onclick=()=>saveFile("despesas.csv",["data;descrição;valor;categoria"].concat(S.tx.map(x=>[x.d,'"'+x.t.replace(/"/g,"'")+'"',String(x.v).replace(".",","),x.c].join(";"))).join("\n"));
 $("bk").onclick=()=>saveFile("backup-despesas.json",JSON.stringify(S));
 $("rs").onclick=()=>$("fj").click();
-$("fj").onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const o=JSON.parse(r.result);if(!Array.isArray(o.tx))throw 0;ask("Restaurar backup",[],"Substituir","Isso substitui os dados atuais pelo backup.").then(r=>{if(r){S={tx:o.tx,lim:o.lim||{},box:o.box||[]};save();render()}})}catch(x){toast("Arquivo de backup inválido.")}e.target.value=""};r.readAsText(f)};
+$("fj").onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const o=JSON.parse(r.result);if(!Array.isArray(o.tx))throw 0;ask("Restaurar backup",[],"Substituir","Isso substitui os dados atuais pelo backup.").then(r=>{if(r){S={...o,tx:o.tx,lim:o.lim||{},box:o.box||[]};mig();save();render()}})}catch(x){toast("Arquivo de backup inválido.")}e.target.value=""};r.readAsText(f)};
 let imgTarget=null;
 function toast(m){const t=$("ts");t.textContent=m;t.hidden=false;clearTimeout(toast.h);toast.h=setTimeout(()=>{t.hidden=true},2800)}
 function ask(title,fields,okText,msg){return new Promise(res=>{
   $("mt").textContent=title;$("mm").textContent=msg||"";
-  $("mf").innerHTML=fields.map((f,i)=>`<label class="mut">${f.label}<input id="mf${i}" type="${f.type||"text"}" ${f.step?`step="${f.step}"`:""} value="${esc(f.value==null?"":f.value)}"></label>`).join("");
+  $("mf").innerHTML=fields.map((f,i)=>`<label class="mut">${f.label}${f.opts?`<select id="mf${i}">${f.opts.map(o=>`<option${o==f.value?" selected":""}>${esc(o)}</option>`).join("")}</select>`:`<input id="mf${i}" type="${f.type||"text"}" ${f.step?`step="${f.step}"`:""} value="${esc(f.value==null?"":f.value)}">`}</label>`).join("");
   $("mo").textContent=okText||"Confirmar";$("mb").hidden=false;const f0=$("mf0");if(f0)f0.focus();
   const done=v=>{$("mb").hidden=true;res(v)};
   $("mc").onclick=()=>done(null);$("mo").onclick=()=>done(fields.map((f,i)=>$("mf"+i).value));
